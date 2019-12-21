@@ -105,6 +105,16 @@ $font-32:32px;
    border-radius: 4px;
    width:fit-content;
    padding:12px 40px;
+   border:1px solid #fff;
+   transition: all 0.3s ease-in-out;
+   cursor: pointer;
+}
+.button-primary:hover{
+  background:$primaryColor;
+  border:1px solid #fff;
+}
+.button-primary:hover span{
+  color:#fff;
 }
 .button-primary span{
   color:$primaryColor;
@@ -120,12 +130,24 @@ $font-32:32px;
    border-radius: 4px;
    width:fit-content;
    padding:12px 40px;
+   border:1px solid $primaryColor;
+   transition: all 0.3s ease-in-out;
+
+   cursor: pointer;
+}
+.button-secondary:hover{
+  background:none;
+  border:1px solid $primaryColor;
 }
 .button-secondary span{
   color:#fff;
   text-transform: uppercase;
   font-weight: bold;
   font-size: $font-16;
+}
+
+.button-secondary:hover span{
+  color:$primaryColor;
 }
 //icon
 .next{
@@ -136,6 +158,7 @@ $font-32:32px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 // navbar
 
@@ -145,12 +168,18 @@ $font-32:32px;
   top:0;
   z-index:100;
 }
+
 .logo span{
   font-size: $font-32;
   color:#fff;
 }
 .menu-top,.menu-bottom{
-  color:$secondayColor
+  color:$secondayColor;
+  cursor: pointer;
+  transition: all 0.5px ease-in-out;
+}
+.menu-top span:hover,.menu-bottom span:hover{
+  color:#fff;
 }
 .menu-bottom{
   font-size: $font-16;
@@ -312,14 +341,22 @@ $font-32:32px;
   width: 50%;
   background: $primaryColor;
   position: relative;
+  overflow: hidden; 
+  cursor: pointer;
+ 
+}
+.about .about-thumbnail:hover img{
+  transform:scale(1.03);
 }
 .about .about-thumbnail .image-thumbnail{
   width: 100%;
   height:400px;
   object-fit: cover;
+   transition: all 0.3s ease-in-out;
 }
 .about .about-thumbnail .about-heading{
   padding:20px;
+  z-index: 3;
 }
 .about .about-quotes{
   width:50%;
@@ -340,9 +377,38 @@ $font-32:32px;
 .story .story-left{
   width:50%;
 }
+.story .story-left .story-title{
+  margin-bottom: 50px;
+ 
+}
+.story .story-right{
+  width:50%;
+}
+.story .story-right .story-title{
+  margin-top:180px;
+}
+.story .story-right .story-right-thumbnail{
+  width:100%;
+  
+  background:$secondayColor;
+  margin-bottom: 50px;
+}
+.story-right-thumbnail img{
+  width:100%;
+  height:550px;
+  object-fit: cover;
+}
+.story-right-thumbnail .title{
+  padding:10px;
+  
+}
 //card
-.card{
+.card-container{
   width:340px;
+  margin-bottom: 50px;
+}
+.card{
+  
   height:400px;
   margin-bottom: 50px;
 }
