@@ -138,10 +138,12 @@ $font-32:32px;
   align-items: center;
 }
 // navbar
+
 .navbar{
   height:80px;
   position:fixed;
   top:0;
+  z-index:100;
 }
 .logo span{
   font-size: $font-32;
