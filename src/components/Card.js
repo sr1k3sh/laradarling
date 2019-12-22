@@ -11,7 +11,7 @@ export default class Card extends Component {
                     </div>
                 </div>
                 <div className="card-content">
-                    <p className="white-color ">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adispsicing elit. Etiam non metus ligula. Maecenas ultrices semper aliquam. Donect ac mattis dui, mec aliquam nibh."</p>
+                    <p className="">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adispsicing elit. Etiam non metus ligula. Maecenas ultrices semper aliquam. Donect ac mattis dui, mec aliquam nibh."</p>
                 </div>
             </div>
 
