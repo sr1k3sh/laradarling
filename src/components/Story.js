@@ -13,7 +13,7 @@ export default class Story extends Component {
                                 <span className="text--uppercase slogan--big white-color">about helping you<span className="text--uppercase slogan--big white-color font--bold"> build your legacy</span> </span>
                                 
                             </div>
-                            <div>
+                            <div className="card-items">
                                 <Card></Card>
                                 <Card></Card>
                                 <Card></Card>

@@ -13,6 +13,15 @@ $font-32:32px;
   padding:0;
   box-sizing: border-box;
 }
+ul li{
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size: $font-12;
+  padding:10px;
+  color:$secondayColor;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
 .App{
   width:100%;
   height:100%;
@@ -192,6 +201,12 @@ $font-32:32px;
   font-weight: 500;
   
 }
+.mobile-menu{
+  display: none;
+}
+#mobile-menu--list{
+  display: none;
+}
 
 // banner
 .banner{
@@ -284,6 +299,7 @@ $font-32:32px;
   background:$secondayColor;
   padding:100px;
   position: relative;
+  z-index: 2;
 }
 
 .offer-section.main-container::before {
@@ -453,7 +469,49 @@ $font-32:32px;
   background-image: linear-gradient(135deg, transparent 7.9%, $secondayColor 7.9%, $secondayColor 67.5%,transparent 67.5%);
 }
 
-
+//responsive larger screen full hd
+ @media (max-width:1920px){
+  .banner::before{
+    left: 30.7%;
+    top: 42%;
+    width: 80%;   
+  }
+  .banner::after{
+    width: 80%;
+    left:31%;
+    top:43%;
+    z-index: 0;
+  }
+}
+//responsive hd screen 1366px
+@media screen and (max-width:1366px){
+  //banner
+  .banner::before{
+    left: 13%;
+    top: 87%;
+    width:100%;
+  }
+  .banner::after{
+    left: 14.5%;
+    top: 85.5%;
+    width:100%;
+  }
+  //story
+  .story .story-left,.story .story-right{
+    width:100%;
+  }
+  .story .story-left{
+    margin-left:80px
+  }
+  .story .story-left .story-title{
+    width:95%;
+  }
+  .background-container {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, #011C39 22%, #fff 22%, #fff 76%, #011C39 76%);
+  }
+}
 //responsive normal desktop
 @media (max-width:1170px){
  #nav{
@@ -468,6 +526,7 @@ $font-32:32px;
  #nav .mobile-menu{
    display: none;
  }
+ 
 }
 @media (max-width:900px){
   #nav .desktop-menu{
@@ -522,14 +581,11 @@ $font-32:32px;
       width: 10px;
     }
   }
-  #mobile-menu--list{
-    display: none;
-    background:#fff;
-  }
+  
 
 }
-//mobile
-@media screen and (max-width:768px){
+//mobile iphone x
+@media only screen and (max-width:411px) and (max-width:823px){
   *{
     margin:0;
     padding:0;
@@ -538,28 +594,38 @@ $font-32:32px;
   }
   //library
   .slogan--big{
-    line-height:none;
-    margin-bottom: 0;
+    line-height:none !important;
+    margin-bottom: 0 !important;
   }
   .paragraph--bold{
-    font-weight: 500;
+    font-weight: 500 !important;
+  }
+  ///navbar 
+  .navbar .container{
+    height:60px;
+  }
+  #mobile-menu--list{
+    // display: none;
+    width:100%;
+    background:#fff;
   }
   ///banner section
   .banner{
-    background-image: linear-gradient(135deg, #011C39 41%, #fff 41%);
+    background-image: linear-gradient(135deg, #011C39 41%, #fff 41%) !important;
   }
   .banner::before,.banner::after{
     display: none;
   } 
   .banner-person{
-    display: none;
+    display: none !important;
   }
+
   .banner-top .container{
-    flex-direction: column;
+    flex-direction: column !important;
   }
   .banner-top .slogan {
-    width: 100%;
-    padding: 12px;
+    width: 100% !important;
+    padding: 12px !important;
   }
   .banner-testimonial {
     width: 100%;
@@ -568,9 +634,9 @@ $font-32:32px;
   }
 
   .banner-testimonial img {
-      width: 196px;
+      width: 196px !important;
       position: absolute;
-      top: 43%;
+      top: 43% !important;
       left:0;
   }
   .banner-testimonial .testimonial {
@@ -580,6 +646,10 @@ $font-32:32px;
     display: block;
     text-align: right;
     z-index: 1;
+    width:100% !important;
+  }
+  .banner .banner-testimonial .testimonial-paragraph{
+    width:100% !important;
   }
   .banner .banner-testimonial .testimonial-paragraph p{
     padding:20px 10px;
@@ -608,6 +678,9 @@ $font-32:32px;
   .about .container{
     flex-direction: column;
   }
+  .about .about-thumbnail .image-thumbnail {
+    height: 340px !important;
+  }
   .about .about-thumbnail,.about .about-quotes{
     width:100%;
     margin:0 auto;
@@ -626,13 +699,13 @@ $font-32:32px;
   }
   .story .background-container{
     flex-direction: column;
-    background-image:linear-gradient(135deg, #011C39 19%, #fff 19%, #fff 98%, #011C39 98%);
+    background-image:linear-gradient(135deg, #011C39 19%, #fff 19%, #fff 98%, #011C39 98%) !important;
   }
   .story .background-container .clip.clippath1,.story .background-container .clip.clippath2{
     width:100%;
   }
   .story .background-container .clip.clippath2{
-    background-image:linear-gradient(135deg, transparent 7.9%, #DABD61 7.9%, #DABD61 95.5%, transparent 95.5%);
+    background-image:linear-gradient(135deg, transparent 7.9%, #DABD61 7.9%, #DABD61 95.5%, transparent 95.5%) !important;
   }
   .story .background-container .clip.clippath1 .story-left{
     width:100%;
@@ -643,15 +716,21 @@ $font-32:32px;
     width:100%;
     padding:24px 10px
   }
+  .story .story-left .story-title{
+    width:100% !important;
+  }
   .story .story-right .story-title{
     margin-top: 10px;
   }
+  .story .story-left .card-items {
+    display: block !important;
+  }
   .card{
-    width:250px;
-    height:260px;
+    width:250px !important;
+    height:260px !important;
   }
   .story-right-thumbnail img {
-    height:350px;
+    height:350px !important;
   }
 }
 //ipad pro
@@ -705,4 +784,153 @@ $font-32:32px;
       margin-top:50px;
       margin-left:50px;
     }
+}
+//ipad portrait 768px
+@media screen and (max-width:768px){
+  *{
+    margin:0;
+    padding:0;
+    // box-sizing: border-box;
+    // overflow: hidden;
+  }
+  //library
+  .slogan--big{
+    line-height:none;
+    margin-bottom: 0;
+  }
+  .paragraph--bold{
+    font-weight: 500;
+  }
+  ///banner section
+  .banner{
+    background-image: linear-gradient(135deg, #011C39 60%, #fff 60%);
+  }
+  .banner::before,.banner::after{
+    display: none;
+  } 
+  .banner-person{
+    display: block;
+    position: absolute;
+    top:1%;
+    right:10%;
+    
+  }
+  .banner-person img{
+    width:295px;
+  }
+  .banner-top .container{
+    flex-direction: column;
+  }
+  .banner-top .slogan {
+    width: 45%;
+    padding: 12px;
+  }
+  .banner-testimonial {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    align-items: flex-end;
+  }
+
+  .banner-testimonial img {
+      width: 196px;
+      position: absolute;
+      top: 16%;
+      left:0;
+  }
+  .banner-testimonial .testimonial {
+    background: #000;
+    padding: 10px 10px;
+    border-radius: 10px;
+    display: block;
+    text-align: right;
+    z-index: 1;
+    width:50%;
+  }
+  .banner .banner-testimonial .testimonial-paragraph{
+    width:50%;
+  }
+  .banner .banner-testimonial .testimonial-paragraph p{
+    padding:20px 10px;
+    line-height: 1;
+    color:#000;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  //offer
+  .offer-section{
+    padding:20px;
+  }
+  .offer-section .container{
+    flex-direction: column;
+  }
+  .offer-section .offer-left{
+    width:100%;
+  }
+  .offer-section .offer-right{
+    width:100%;
+  }
+  //about
+  .about{
+    padding:10px;
+  }
+  .about .container{
+    flex-direction: column;
+  }
+  .about .about-thumbnail .image-thumbnail {
+    height:570px;
+  }
+  .about .about-thumbnail,.about .about-quotes{
+    width:100%;
+    margin:0 auto;
+  }
+  .about .about-thumbnail .about-heading{
+    padding: 10px;
+  }
+  .about .about-quotes div{
+    margin-bottom: 20px;
+  }
+  
+  //story
+  .story{
+    // overflow: hidden;
+    height:100%;
+  }
+  .story .background-container{
+    flex-direction: column;
+    background-image:linear-gradient(135deg, #011C39 24.5%, #fff 24.5%, #fff 98%, #011C39 98%);
+  }
+  .story .background-container .clip.clippath1,.story .background-container .clip.clippath2{
+    width:100%;
+  }
+  .story .background-container .clip.clippath2{
+    background-image:linear-gradient(135deg, transparent 7.9%, #DABD61 7.9%, #DABD61 95.5%, transparent 95.5%);
+  }
+  .story .background-container .clip.clippath1 .story-left{
+    width:100%;
+    margin-top:20px;
+    padding:10px;
+  }
+  .story .background-container .clip.clippath2 .story-right{
+    width:100%;
+    padding:24px 10px
+  }
+  .story .story-left .story-title{
+    width:60%;
+  } 
+  .story .story-right .story-title{
+    margin-top: 28px;
+  }
+  .story .story-left .card-items{
+    display: flex;
+  }
+
+  .card{
+    width:245px;
+    height:250px;
+  }
+  .story-right-thumbnail img {
+    height:625px;
+  }
+  
 }
