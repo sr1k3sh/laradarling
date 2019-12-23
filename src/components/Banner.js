@@ -1,6 +1,30 @@
 import React, { Component } from 'react'
-
+import $ from 'jquery'
 export default class Banner extends Component {
+    componentWillMount(){
+        setTimeout(_ => {
+            $('.slogan .slogan--small').css('animation', 'fadeIn 0.3s ease-in-out forwards')
+            setTimeout(_ => {
+                $('.slogan .slogan--big').css('animation', 'fadeIn 0.3s ease-in-out forwards')
+                setTimeout(_ => {
+                    $('.slogan .button-primary').css('animation', 'fadeIn 0.3s ease-in-out forwards')
+                    setTimeout(_=>{
+                        $('.banner-testimonial img').css('animation', 'fadeIn 0.3s ease-in-out forwards')
+                        setTimeout(_=>{
+                            $('.banner-testimonial .testimonial').css('animation', 'fadeIn 0.3s ease-in-out forwards')
+                            setTimeout(_ => {
+                                $('.banner-testimonial .testimonial-paragraph').css('animation', 'fadeIn 0.3s ease-in-out forwards')
+                            }, 300)
+                        },300)
+                    },300)
+                }, 300)
+            }, 300)
+        }, 300)
+    }
+    componentDidMount(){
+        
+        
+    }
     render() {
         return (
             <div className="banner">

@@ -94,7 +94,7 @@ ul li{
   font-weight: bold;
 }
 .font--light{
-  font-weight: lighter;
+  font-weight: 400;
 
 }
 .white-color{
@@ -168,6 +168,15 @@ ul li{
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+//animations
+@keyframes fadeIn{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
 }
 // navbar
 
@@ -256,7 +265,9 @@ ul li{
   
   margin-bottom: 20px;
 }
-
+.banner .slogan .slogan--small,.slogan .slogan--big,.slogan .button-primary,.banner-testimonial img,.banner-testimonial .testimonial,.banner-testimonial .testimonial-paragraph{
+  opacity: 0;
+}
 .banner-person{
   z-index:2;
 }
@@ -275,7 +286,6 @@ ul li{
 }
 .banner-testimonial .testimonial{
   background:#000;
-  // transform:translate(-80px,0);
   padding:34px 55px;
   border-radius: 10px;
   display: block;
@@ -386,6 +396,30 @@ ul li{
   top:50%;  
   left:50%;
 }
+//divider
+.divider{
+  background:linear-gradient(135deg, #fff 28%,#fff 63.5%,$primaryColor 63.5%);
+  height:20px;
+  position: relative;
+}
+.divider.main-container::before {
+    content: '';
+    width: 55%;
+    height: 2px;
+    background: $primaryColor;
+    position: absolute;
+    top: 0%;
+    left: 4%;
+}
+.divider.main-container::after {
+    content: '';
+    width: 54%;
+    height: 2px;
+    background: linear-gradient(135deg, $secondayColor 18%, #fff 18%,#fff 31%, $secondayColor 31%,$secondayColor 64%,#fff 64%,#fff 80%,$secondayColor 80%);
+    position: absolute;
+    bottom: 45%;
+    left: 3%;
+}
 //story
 .story{
   background:$primaryColor;
@@ -411,7 +445,7 @@ ul li{
  
 }
 .story .story-right{
-  width:50%;
+  width:62%;
   padding:50px;
 }
 .story .story-right .story-title{
@@ -430,7 +464,12 @@ ul li{
 }
 .story-right-thumbnail .title{
   padding:10px;
-  
+}
+.story-paragraph{
+ margin-bottom: 30px;
+}
+.story-right .button-secondary{
+  width:50%;
 }
 //card
 .card-container{
@@ -460,12 +499,32 @@ ul li{
   width:50%;
   height:100%;
 }
-.background-container .clip.clip.clippath1{
+.background-container .clip.clippath1{
     display: flex;
     // align-items: center;
     justify-content: flex-end;
+    position: relative;
+}
+.clip.clippath1::before{
+  content: '';
+    width: 83%;
+    height: 2px;
+    background: linear-gradient(135deg, $secondayColor 18%, #fff 18%,#fff 31%, $secondayColor 31%,$secondayColor 64%,$secondayColor 80%);
+    position: absolute;
+    bottom: 0.5%;
+    left: 3%;
+}
+.clip.clippath1::after{
+    content: '';
+    width: 80%;
+    height: 2px;
+    background: $primaryColor;
+    position: absolute;
+    bottom: 0%;
+    left: 4%;
 }
 .background-container .clip.clippath2{
+  // margin-top:10px;
   background-image: linear-gradient(135deg, transparent 7.9%, $secondayColor 7.9%, $secondayColor 67.5%,transparent 67.5%);
 }
 
@@ -481,6 +540,16 @@ ul li{
     left:31%;
     top:43%;
     z-index: 0;
+  }
+  .offer-section{
+    z-index:1;
+    top:-12px;
+  }
+  .story-right .button-secondary{
+    width:50%;
+  }
+  .background-container .clip.clippath2{
+  margin-top:10px;
   }
 }
 //responsive hd screen 1366px
@@ -511,6 +580,26 @@ ul li{
     height: 100%;
     background-image: linear-gradient(135deg, #011C39 22%, #fff 22%, #fff 76%, #011C39 76%);
   }
+  .background-container .clip.clippath2 {
+    margin-top:0;
+    background-image: linear-gradient(135deg, transparent 5.2%, #DABD61 5.2%, #DABD61 70.5%, transparent 70.5%);
+  }
+  .story-right .button-secondary{
+    width:43%;
+  }
+  .divider {
+    background: linear-gradient(135deg, #fff 28%, #fff 62.5%, #011C39 62.5%);
+  }
+  .clip.clippath1::before {
+    content: '';
+    width: 64%;
+    height: 2px;
+    background: linear-gradient(135deg, #DABD61 18%, #fff 18%, #fff 31%, #DABD61 31%, #DABD61 64%, #DABD61 80%);
+    position: absolute;
+    bottom: 0.5%;
+    left: 3%;
+    z-index: 1;
+}
 }
 //responsive normal desktop
 @media (max-width:1170px){
